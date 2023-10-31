@@ -2,8 +2,10 @@ package homework.week02.airport;
 
 import java.util.List;
 
+import homework.week02.airport.aircraft.AirAmbulance;
 import homework.week02.airport.aircraft.Airbus;
 import homework.week02.airport.aircraft.AircraftType;
+import homework.week02.airport.flight.CargoFlight;
 import homework.week02.airport.flight.FlightType;
 import homework.week02.airport.flight.PassengerFlight;
 import homework.week02.airport.person.CrewMember;
@@ -39,11 +41,28 @@ public class App {
                 "US2832"
         );
 
+        CargoFlight cargoFlight = new CargoFlight(
+                56789,
+                FlightType.COMMERCIAL,
+                AircraftType.CARGO,
+                "FedEx"
+        );
+
         System.out.println("AIRCRAFT DATA:");
         System.out.println(airbus);
         System.out.println();
 
         System.out.println("FLIGHT DATA");
         System.out.println(passengerFlight);
+        System.out.println();
+
+
+        System.out.println("FLIGHT DATA");
+        System.out.println(cargoFlight);
+        System.out.println();
+
+        System.out.println("Final class: AIR AMBULANCE");
+        AirAmbulance airAmbulance = new AirAmbulance();
+        AirAmbulance.locateInjuredPerson();
     }
 }

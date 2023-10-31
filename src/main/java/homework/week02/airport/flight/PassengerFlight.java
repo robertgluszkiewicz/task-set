@@ -6,7 +6,7 @@ import homework.week02.airport.aircraft.AircraftType;
 import homework.week02.airport.person.CrewMember;
 import homework.week02.airport.person.Passenger;
 
-public class PassengerFlight extends Flight {
+public class PassengerFlight extends Flight implements PassengerBoardServices {
     private List<Passenger> passengers;
     private List<CrewMember> crewMembers;
     private String flightNumber;
@@ -63,5 +63,25 @@ public class PassengerFlight extends Flight {
                 "aircraft type: " + aircraftType + '\n' +
                 "crew: " + crewMembers + '\n' +
                 "passengers: " + passengers + '\n';
+    }
+
+    @Override
+    public void fastenSeatbelts() {
+        System.out.println("Please fasten your seatbelts!");
+    }
+
+    @Override
+    public void unfastenSeatbelts() {
+        System.out.println("You can unfasten your seatbelts");
+    }
+
+    @Override
+    public void serveSnack() {
+        System.out.println("Please choose your snack");
+    }
+
+    @Override
+    public void serveMeal() {
+        System.out.println("Enjoy your meal");
     }
 }

@@ -12,4 +12,8 @@ public abstract class Aircraft {
         this.emptyWeight = emptyWeight;
         this.maxLoad = maxLoad;
     }
+
+    public final void sendSosSignal() {
+        System.out.println("Send SOS signal by radio");
+    }
 }

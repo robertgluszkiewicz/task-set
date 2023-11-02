@@ -61,7 +61,7 @@ public class App {
         System.out.println(cargoFlight);
         System.out.println();
 
-        System.out.println("Final class: AIR AMBULANCE");
+        System.out.println("Final class: " + AirAmbulance.class);
         AirAmbulance airAmbulance = new AirAmbulance();
         AirAmbulance.locateInjuredPerson();
     }

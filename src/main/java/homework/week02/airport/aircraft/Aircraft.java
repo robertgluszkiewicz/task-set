@@ -12,4 +12,20 @@ public abstract class Aircraft {
         this.emptyWeight = emptyWeight;
         this.maxLoad = maxLoad;
     }
+
+    public String getManufacture() {
+        return manufacture;
+    }
+
+    public AircraftType getAircraftType() {
+        return aircraftType;
+    }
+
+    public int getEmptyWeight() {
+        return emptyWeight;
+    }
+
+    public int getMaxLoad() {
+        return maxLoad;
+    }
 }

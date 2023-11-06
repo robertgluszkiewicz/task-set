@@ -50,6 +50,4 @@ public class Airbus extends Aircraft implements AircraftServices {
                 "empty weight: " + getEmptyWeight() + '\n' +
                 "max load: " + getMaxLoad();
     }
-
-
 }

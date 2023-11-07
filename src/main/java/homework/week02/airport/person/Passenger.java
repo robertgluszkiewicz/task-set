@@ -14,6 +14,7 @@ public class Passenger extends Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
         Passenger passenger = (Passenger) o;
 
@@ -23,7 +24,8 @@ public class Passenger extends Person {
 
     @Override
     public int hashCode() {
-        int result = departureAirport.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + departureAirport.hashCode();
         result = 31 * result + arrivalAirport.hashCode();
         return result;
     }

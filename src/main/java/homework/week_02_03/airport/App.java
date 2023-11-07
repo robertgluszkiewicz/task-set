@@ -11,10 +11,6 @@ import homework.week_02_03.airport.person.CrewRole;
 import homework.week_02_03.airport.person.Passenger;
 
 public class App {
-    static {
-        System.setProperty("log4j2.configurationFile", "log4j2.xml");
-    }
-
     public static void main(String[] args) {
         Airbus airbus = new Airbus(
                 "Boeing",

@@ -57,10 +57,10 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
 
     @Override
     public String toString() {
-        return "ID: " + id + '\n' +
+        return "ID: " + getId() + '\n' +
                 "number: " + flightNumber + '\n' +
-                "type: " + flightType + '\n' +
-                "aircraft type: " + aircraftType + '\n' +
+                "type: " + getFlightType() + '\n' +
+                "aircraft type: " + getAircraftType() + '\n' +
                 "crew: " + crewMembers + '\n' +
                 "passengers: " + passengers + '\n';
     }

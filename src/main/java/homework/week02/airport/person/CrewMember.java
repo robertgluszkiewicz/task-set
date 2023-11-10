@@ -30,6 +30,6 @@ public class CrewMember extends Person {
 
     @Override
     public String toString() {
-        return "name: " + firstName + " " + lastName + ", role: " + crewRole + ", licence: " + licenceId;
+        return "name: " + getFirstName() + " " + getLastName() + ", role: " + crewRole + ", licence: " + licenceId;
     }
 }

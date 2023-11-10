@@ -1,6 +1,6 @@
 package homework.week02.airport.person;
 
-public class CrewMember extends Person {
+public class CrewMember extends Person implements SafetyProcedure {
     private CrewRole crewRole;
     private String licenceId;
 
@@ -31,5 +31,11 @@ public class CrewMember extends Person {
     @Override
     public String toString() {
         return "name: " + getFirstName() + " " + getLastName() + ", role: " + crewRole + ", licence: " + licenceId;
+    }
+
+
+    @Override
+    public void provideFirstAid() {
+        System.out.println("Start first aid procedure");
     }
 }

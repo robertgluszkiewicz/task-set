@@ -1,6 +1,6 @@
-09:59:43.755 [main] INFO  homework.week_02_03.airport.printer.Printer - This is the 1 passenger on the list
-09:59:43.758 [main] INFO  homework.week_02_03.airport.printer.Printer - This is the 2 passenger on the list
-09:59:43.759 [main] INFO  homework.week_02_03.airport.printer.Printer - This is the 3 passenger on the list
-09:59:43.760 [main] WARN  homework.week_02_03.airport.printer.Printer - Crew member list is empty
-09:59:43.761 [main] ERROR homework.week_02_03.airport.printer.Printer - Source data error: Aircraft not found
-09:59:43.761 [main] ERROR homework.week_02_03.airport.printer.Printer - Source data error: Flight not found
+10:14:51.414 [main] INFO  homework.week_02_03.airport.printer.Printer - This is the 1 passenger on the list
+10:14:51.421 [main] INFO  homework.week_02_03.airport.printer.Printer - This is the 2 passenger on the list
+10:14:51.423 [main] INFO  homework.week_02_03.airport.printer.Printer - This is the 3 passenger on the list
+10:14:51.424 [main] WARN  homework.week_02_03.airport.printer.Printer - Crew member list is empty
+10:14:51.425 [main] ERROR homework.week_02_03.airport.printer.Printer - Source data error: Aircraft not found
+10:14:51.426 [main] ERROR homework.week_02_03.airport.printer.Printer - Source data error: Flight not found

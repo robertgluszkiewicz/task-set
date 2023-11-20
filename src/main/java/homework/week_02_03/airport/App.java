@@ -1,16 +1,16 @@
-package homework.week02.airport;
+package homework.week_02_03.airport;
 
 import java.util.List;
 
-import homework.week02.airport.aircraft.AirAmbulance;
-import homework.week02.airport.aircraft.Airbus;
-import homework.week02.airport.aircraft.AircraftType;
-import homework.week02.airport.flight.CargoFlight;
-import homework.week02.airport.flight.FlightType;
-import homework.week02.airport.flight.PassengerFlight;
-import homework.week02.airport.person.CrewMember;
-import homework.week02.airport.person.CrewRole;
-import homework.week02.airport.person.Passenger;
+import homework.week_02_03.airport.aircraft.AirAmbulance;
+import homework.week_02_03.airport.aircraft.Airbus;
+import homework.week_02_03.airport.aircraft.AircraftType;
+import homework.week_02_03.airport.flight.CargoFlight;
+import homework.week_02_03.airport.flight.FlightType;
+import homework.week_02_03.airport.flight.PassengerFlight;
+import homework.week_02_03.airport.person.CrewMember;
+import homework.week_02_03.airport.person.CrewRole;
+import homework.week_02_03.airport.person.Passenger;
 
 public class App {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package homework.week02.airport.person;
+package homework.week_02_03.airport.person;
 
 public class Passenger extends Person {
     private String departureAirport;

@@ -1,4 +1,4 @@
-package homework.week02.airport.flight;
+package homework.week_02_03.airport.flight;
 
 public interface PassengerBoardServices extends BoardServices {
     void serveSnack();

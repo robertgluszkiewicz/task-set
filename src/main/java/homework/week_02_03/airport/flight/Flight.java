@@ -1,6 +1,6 @@
-package homework.week02.airport.flight;
+package homework.week_02_03.airport.flight;
 
-import homework.week02.airport.aircraft.AircraftType;
+import homework.week_02_03.airport.aircraft.AircraftType;
 
 public abstract class Flight {
     protected long id;

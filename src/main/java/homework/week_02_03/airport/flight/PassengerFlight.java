@@ -1,10 +1,10 @@
-package homework.week02.airport.flight;
+package homework.week_02_03.airport.flight;
 
 import java.util.List;
 
-import homework.week02.airport.aircraft.AircraftType;
-import homework.week02.airport.person.CrewMember;
-import homework.week02.airport.person.Passenger;
+import homework.week_02_03.airport.aircraft.AircraftType;
+import homework.week_02_03.airport.person.CrewMember;
+import homework.week_02_03.airport.person.Passenger;
 
 public class PassengerFlight extends Flight implements PassengerBoardServices {
     private List<Passenger> passengers;

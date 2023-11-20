@@ -1,9 +1,8 @@
-package homework.week02.airport.flight;
+package homework.week_02_03.airport.flight;
 
-import homework.week02.airport.aircraft.AircraftType;
+import homework.week_02_03.airport.aircraft.AircraftType;
 
 public class CargoFlight extends Flight implements CargoBoardServices {
-
     private String cargoOwner;
 
     public CargoFlight(long id, FlightType flightType, AircraftType aircraftType, String cargoOwner) {

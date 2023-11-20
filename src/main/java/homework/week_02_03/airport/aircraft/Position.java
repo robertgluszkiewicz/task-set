@@ -1,4 +1,4 @@
-package homework.week02.airport.aircraft;
+package homework.week_02_03.airport.aircraft;
 
 public class Position {
     private double altitude;

@@ -12,4 +12,16 @@ public abstract class Flight {
         this.flightType = flightType;
         this.aircraftType = aircraftType;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public FlightType getFlightType() {
+        return flightType;
+    }
+
+    public AircraftType getAircraftType() {
+        return aircraftType;
+    }
 }

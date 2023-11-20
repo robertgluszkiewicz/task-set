@@ -43,10 +43,11 @@ public class Airbus extends Aircraft implements AircraftServices {
 
     @Override
     public String toString() {
-        return "manufacture: " + manufacture + '\n' +
+        return "manufacture: " + getManufacture() + '\n' +
+                "owner: " + owner + '\n' +
                 "model: " + model + '\n' +
-                "aircraft type: " + aircraftType + '\n' +
-                "empty weight: " + emptyWeight + '\n' +
-                "max load: " + maxLoad;
+                "aircraft type: " + getAircraftType() + '\n' +
+                "empty weight: " + getEmptyWeight() + '\n' +
+                "max load: " + getMaxLoad();
     }
 }

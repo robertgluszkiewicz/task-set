@@ -30,6 +30,6 @@ public class Passenger extends Person {
 
     @Override
     public String toString() {
-        return "name: " + firstName + " " + lastName + " (" + departureAirport + " > " + arrivalAirport + ")";
+        return "name: " + getFirstName() + " " + getLastName() + " (" + departureAirport + " > " + arrivalAirport + ")";
     }
 }

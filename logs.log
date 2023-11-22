@@ -1,0 +1,6 @@
+13:20:34.362 [main] INFO  homework.week02_03.airport.printer.Printer - This is the 1 passenger on the list
+13:20:34.365 [main] INFO  homework.week02_03.airport.printer.Printer - This is the 2 passenger on the list
+13:20:34.365 [main] INFO  homework.week02_03.airport.printer.Printer - This is the 3 passenger on the list
+13:20:34.367 [main] WARN  homework.week02_03.airport.printer.Printer - Crew member list is empty
+13:20:34.368 [main] ERROR homework.week02_03.airport.printer.Printer - Source data error: Aircraft not found
+13:20:34.368 [main] ERROR homework.week02_03.airport.printer.Printer - Source data error: Flight not found

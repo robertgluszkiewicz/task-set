@@ -1,0 +1,1 @@
+Position{altitude=54.22, latitude=18.31}

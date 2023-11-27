@@ -1,14 +1,16 @@
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.expectThrows;
 
 import org.testng.annotations.Test;
 
-import homework.week02.airport.aircraft.Airbus;
-import homework.week02.airport.aircraft.AircraftType;
-import homework.week02.airport.aircraft.Position;
+import homework.week02_03.airport.aircraft.Airbus;
+import homework.week02_03.airport.aircraft.AircraftType;
+import homework.week02_03.airport.aircraft.Position;
+import homework.week02_03.airport.exceptions.PositionNotFoundException;
 
 public class TestAirbus {
     @Test
-    void shouldSendPosition() {
+    void verifyPositionToSend() {
         //Given
         Airbus airbus = new Airbus("Airbus", AircraftType.PASSENGER, 25000, 30000, "777X", "Lufthansa");
         double[] receivedPosition = {55.55, 22.22};
@@ -16,6 +18,6 @@ public class TestAirbus {
         Position expected = new Position(55.55, 22.22);
         Position actual = airbus.sendPosition(receivedPosition);
         //Then
-        assertEquals(actual, expected);
+        assertEquals(actual, expected, "Position does not match");
     }
 }

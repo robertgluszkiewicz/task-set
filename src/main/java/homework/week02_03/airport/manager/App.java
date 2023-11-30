@@ -11,7 +11,7 @@ import java.util.Set;
 
 import homework.week02_03.airport.aircraft.Position;
 import homework.week02_03.airport.person.CrewMember;
-import homework.week02_03.airport.person.CrewRole;
+import homework.week02_03.airport.enums.CrewRole;
 import homework.week02_03.airport.person.Passenger;
 import homework.week02_03.airport.person.Person;
 

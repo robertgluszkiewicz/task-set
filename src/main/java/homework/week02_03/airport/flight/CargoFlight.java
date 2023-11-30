@@ -1,12 +1,14 @@
 package homework.week02_03.airport.flight;
 
-import homework.week02_03.airport.aircraft.AircraftType;
+import homework.week02_03.airport.enums.AircraftType;
+import homework.week02_03.airport.enums.FlightMode;
+import homework.week02_03.airport.enums.FlightType;
 
 public class CargoFlight extends Flight implements CargoBoardServices {
     private String cargoOwner;
 
-    public CargoFlight(long id, FlightType flightType, AircraftType aircraftType, String cargoOwner) {
-        super(id, flightType, aircraftType);
+    public CargoFlight(long id, FlightType flightType, FlightMode flightMode, AircraftType aircraftType, String cargoOwner) {
+        super(id, flightType, flightMode, aircraftType);
         this.cargoOwner = cargoOwner;
     }
 
@@ -28,6 +30,7 @@ public class CargoFlight extends Flight implements CargoBoardServices {
     public String toString() {
         return "ID: " + getId() + '\n' +
                 "type: " + getFlightType() + '\n' +
+                "mode: " + getFlightMode() + '\n' +
                 "aircraft type: " + getAircraftType() + '\n' +
                 "cargoOwner: " + cargoOwner + '\n';
     }

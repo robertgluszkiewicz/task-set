@@ -2,6 +2,8 @@ package homework.week02_03.airport.aircraft;
 
 import java.util.Random;
 
+import homework.week02_03.airport.enums.AircraftType;
+
 public class Airbus extends Aircraft implements AircraftServices {
     private String model;
     private String owner;

@@ -4,12 +4,13 @@ import java.util.List;
 
 import homework.week02_03.airport.aircraft.AirAmbulance;
 import homework.week02_03.airport.aircraft.Airbus;
-import homework.week02_03.airport.aircraft.AircraftType;
+import homework.week02_03.airport.enums.AircraftType;
+import homework.week02_03.airport.enums.FlightMode;
 import homework.week02_03.airport.flight.CargoFlight;
-import homework.week02_03.airport.flight.FlightType;
+import homework.week02_03.airport.enums.FlightType;
 import homework.week02_03.airport.flight.PassengerFlight;
 import homework.week02_03.airport.person.CrewMember;
-import homework.week02_03.airport.person.CrewRole;
+import homework.week02_03.airport.enums.CrewRole;
 import homework.week02_03.airport.person.Passenger;
 
 public class App {
@@ -35,6 +36,7 @@ public class App {
         PassengerFlight passengerFlight = new PassengerFlight(
                 12345,
                 FlightType.COMMERCIAL,
+                FlightMode.STANDARD,
                 AircraftType.PASSENGER,
                 passengers,
                 crewMembers,
@@ -44,6 +46,7 @@ public class App {
         CargoFlight cargoFlight = new CargoFlight(
                 56789,
                 FlightType.COMMERCIAL,
+                FlightMode.STANDARD,
                 AircraftType.CARGO,
                 "FedEx"
         );

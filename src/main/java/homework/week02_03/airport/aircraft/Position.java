@@ -9,6 +9,14 @@ public class Position {
         this.latitude = latitude;
     }
 
+    public double getAltitude() {
+        return altitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

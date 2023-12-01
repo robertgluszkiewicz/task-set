@@ -3,6 +3,7 @@ package homework.week02_03.airport.runner;
 import java.util.List;
 
 import homework.week02_03.airport.aircraft.AircraftType;
+import homework.week02_03.airport.exceptions.PassengersNotFoundException;
 import homework.week02_03.airport.flight.FlightType;
 import homework.week02_03.airport.flight.PassengerFlight;
 import homework.week02_03.airport.person.CrewMember;
@@ -10,7 +11,7 @@ import homework.week02_03.airport.person.CrewRole;
 import homework.week02_03.airport.person.Passenger;
 
 public class StreamRunner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PassengersNotFoundException {
         List<Passenger> passengers = List.of(
                 new Passenger("John", "Kilian", "DEN", "NYC"),
                 new Passenger("Bruce", "Clark", "DEN", "NYC"),
@@ -45,7 +46,7 @@ public class StreamRunner {
         System.out.println(" - - - Stream examples - - -");
 
         System.out.println("Example 1");
-        System.out.println("Number of passengers: " + passengerFlight.getPassengersNumber());
+        System.out.println("Number of passengers on flight to 'NYC': " + passengerFlight.getPassengersNumberOnFlightToAGivenAirport("NYC"));
         System.out.println();
 
         System.out.println("Example 2");
@@ -69,8 +70,8 @@ public class StreamRunner {
         System.out.println();
 
         System.out.println("Example 6");
-        System.out.println("License ID list of all crew members:");
-        passengerFlight.getCrewMembersLicenseId().forEach(System.out::println);
+        System.out.println("License ID of all crew members:");
+        System.out.println(passengerFlight.getCrewMembersLicenseId());
         System.out.println();
 
         System.out.println("Example 7");

@@ -39,8 +39,9 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
         return flightNumber;
     }
 
-    public long getPassengersNumber() {
+    public long getPassengersNumberOnFlightToAGivenAirport(String airportCode) {
         return passengers.stream()
+                .filter(passenger -> passenger.getArrivalAirport().equals(airportCode))
                 .count();
     }
 
@@ -64,23 +65,21 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
 
     public List<CrewMember> getCrewMembersWhoHaveAGivenRole(CrewRole role) {
         return crewMembers.stream()
-                .filter(crewMember -> crewMember.getCrewRole() == role)
+                .filter(crewMember -> crewMember.getCrewRole().equals(role))
                 .collect(Collectors.toList());
     }
 
-    public List<String> getCrewMembersLicenseId() {
+    public String getCrewMembersLicenseId() {
         return crewMembers.stream()
                 .map(CrewMember::getLicenceId)
-                .collect(Collectors.toList());
+                .collect(Collectors.joining(", ", "(", ")"));
     }
 
     public List<String> getCrewMembersWithFirstNameAndFirstLetterOfLastName() {
         return crewMembers.stream()
-                .map(crewMember -> crewMember.getFirstName() + " " + crewMember.getLastName().substring(0,1) + ".")
+                .map(crewMember -> crewMember.getFirstName() + " " + crewMember.getLastName().substring(0, 1) + ".")
                 .collect(Collectors.toList());
     }
-
-
 
     @Override
     public boolean equals(Object o) {

@@ -1,10 +1,14 @@
 package homework.week02_03.airport.flight;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import homework.week02_03.airport.aircraft.AircraftType;
 import homework.week02_03.airport.person.CrewMember;
+import homework.week02_03.airport.person.CrewRole;
 import homework.week02_03.airport.person.Passenger;
+import homework.week02_03.airport.person.Person;
 
 public class PassengerFlight extends Flight implements PassengerBoardServices {
     private List<Passenger> passengers;
@@ -34,6 +38,49 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
     public String getFlightNumber() {
         return flightNumber;
     }
+
+    public long getPassengersNumber() {
+        return passengers.stream()
+                .count();
+    }
+
+    public List<Passenger> getPassengersSortedByLastName() {
+        return passengers.stream()
+                .sorted(Comparator.comparing(Person::getLastName))
+                .collect(Collectors.toList());
+    }
+
+    public List<Passenger> getPassengersWhoseFirstNameStartsWithAGivenLetter(String firstLetterOfFirstName) {
+        return passengers.stream()
+                .filter(passenger -> passenger.getFirstName().startsWith(firstLetterOfFirstName))
+                .collect(Collectors.toList());
+    }
+
+    public List<Passenger> getPassengersWhoseLastNameStartsWithAGivenLetter(String firstLetterOfLastName) {
+        return passengers.stream()
+                .filter(passenger -> passenger.getLastName().startsWith(firstLetterOfLastName))
+                .collect(Collectors.toList());
+    }
+
+    public List<CrewMember> getCrewMembersWhoHaveAGivenRole(CrewRole role) {
+        return crewMembers.stream()
+                .filter(crewMember -> crewMember.getCrewRole() == role)
+                .collect(Collectors.toList());
+    }
+
+    public List<String> getCrewMembersLicenseId() {
+        return crewMembers.stream()
+                .map(CrewMember::getLicenceId)
+                .collect(Collectors.toList());
+    }
+
+    public List<String> getCrewMembersWithFirstNameAndFirstLetterOfLastName() {
+        return crewMembers.stream()
+                .map(crewMember -> crewMember.getFirstName() + " " + crewMember.getLastName().substring(0,1) + ".")
+                .collect(Collectors.toList());
+    }
+
+
 
     @Override
     public boolean equals(Object o) {

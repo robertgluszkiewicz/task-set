@@ -10,6 +10,14 @@ public class CrewMember extends Person implements SafetyProcedure {
         this.licenceId = licenceId;
     }
 
+    public CrewRole getCrewRole() {
+        return crewRole;
+    }
+
+    public String getLicenceId() {
+        return licenceId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

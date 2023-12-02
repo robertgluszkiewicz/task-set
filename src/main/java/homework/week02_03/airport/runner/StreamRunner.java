@@ -30,9 +30,7 @@ public class StreamRunner {
                 new CrewMember("Marco", "Capone", CrewRole.PILOT, "022QWE"),
                 new CrewMember("Aurora", "Bianchi", CrewRole.FLIGHT_ATTENDANT, "023GFD"),
                 new CrewMember("Stella", "Rizzo", CrewRole.FLIGHT_ATTENDANT, "043GCD"),
-                new CrewMember("Angela", "Esposito", CrewRole.FLIGHT_ATTENDANT, "094KLE"),
-                new CrewMember("Rosa", "Moretti", CrewRole.MECHANIC, "034PQS"),
-                new CrewMember("Maria", "Ricci", CrewRole.ENGINEER, "053MKD")
+                new CrewMember("Angela", "Esposito", CrewRole.FLIGHT_ATTENDANT, "094KLE")
         );
         PassengerFlight passengerFlight = new PassengerFlight(
                 1234,
@@ -50,33 +48,33 @@ public class StreamRunner {
         System.out.println();
 
         System.out.println("Example 2");
-        System.out.println("Passengers sorted by last name:");
+        System.out.println("Passenger list sorted by last name:");
         passengerFlight.getPassengersSortedByLastName().forEach(System.out::println);
         System.out.println();
 
         System.out.println("Example 3");
-        System.out.println("Passengers whose first name starts with 'C'");
-        passengerFlight.getPassengersWhoseFirstNameStartsWithAGivenLetter("C").forEach(System.out::println);
-        System.out.println();
-
-        System.out.println("Example 4");
-        System.out.println("Passengers whose last name starts with 'D'");
+        System.out.println("Passengers whose last name starts with a given letter (D):");
         passengerFlight.getPassengersWhoseLastNameStartsWithAGivenLetter("D").forEach(System.out::println);
         System.out.println();
 
-        System.out.println("Example 5");
-        System.out.println("Crew members who are a pilot");
+        System.out.println("Example 4");
+        System.out.println("Crew members who have a given role (PILOT):");
         passengerFlight.getCrewMembersWhoHaveAGivenRole(CrewRole.PILOT).forEach(System.out::println);
         System.out.println();
 
+        System.out.println("Example 5");
+        System.out.println("License IDs of all crew members:");
+        System.out.println(passengerFlight.getCrewMembersLicenseIds());
+        System.out.println();
+
         System.out.println("Example 6");
-        System.out.println("License ID of all crew members:");
-        System.out.println(passengerFlight.getCrewMembersLicenseId());
+        System.out.println("Full names of all persons on board:");
+        passengerFlight.getFullNamesOfAllPersonsOnBoard(List.of(crewMembers, passengers)).forEach(System.out::println);
         System.out.println();
 
         System.out.println("Example 7");
-        System.out.println("Crew member list with hidden last name:");
-        passengerFlight.getCrewMembersWithFirstNameAndFirstLetterOfLastName().forEach(System.out::println);
+        System.out.println("First names with hidden last names for a given person list (crew members):");
+        passengerFlight.getFirstNamesWithHiddenLastNames(crewMembers).forEach(System.out::println);
         System.out.println();
     }
 }

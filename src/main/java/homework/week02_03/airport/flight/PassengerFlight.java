@@ -1,5 +1,6 @@
 package homework.week02_03.airport.flight;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -51,12 +52,6 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
                 .collect(Collectors.toList());
     }
 
-    public List<Passenger> getPassengersWhoseFirstNameStartsWithAGivenLetter(String firstLetterOfFirstName) {
-        return passengers.stream()
-                .filter(passenger -> passenger.getFirstName().startsWith(firstLetterOfFirstName))
-                .collect(Collectors.toList());
-    }
-
     public List<Passenger> getPassengersWhoseLastNameStartsWithAGivenLetter(String firstLetterOfLastName) {
         return passengers.stream()
                 .filter(passenger -> passenger.getLastName().startsWith(firstLetterOfLastName))
@@ -65,19 +60,26 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
 
     public List<CrewMember> getCrewMembersWhoHaveAGivenRole(CrewRole role) {
         return crewMembers.stream()
-                .filter(crewMember -> crewMember.getCrewRole().equals(role))
+                .filter(crewMember -> crewMember.getCrewRole() == role)
                 .collect(Collectors.toList());
     }
 
-    public String getCrewMembersLicenseId() {
+    public String getCrewMembersLicenseIds() {
         return crewMembers.stream()
                 .map(CrewMember::getLicenceId)
                 .collect(Collectors.joining(", ", "(", ")"));
     }
 
-    public List<String> getCrewMembersWithFirstNameAndFirstLetterOfLastName() {
-        return crewMembers.stream()
-                .map(crewMember -> crewMember.getFirstName() + " " + crewMember.getLastName().substring(0, 1) + ".")
+    public List<String> getFullNamesOfAllPersonsOnBoard(List<List<? extends Person>> persons) {
+        return persons.stream()
+                .flatMap(Collection::stream)
+                .map(person -> person.getFirstName() + " " + person.getLastName())
+                .collect(Collectors.toList());
+    }
+
+    public List<String> getFirstNamesWithHiddenLastNames(List<? extends Person> persons) {
+        return persons.stream()
+                .map(person -> person.getFirstName() + " " + person.getLastName().substring(0, 1) + ".")
                 .collect(Collectors.toList());
     }
 

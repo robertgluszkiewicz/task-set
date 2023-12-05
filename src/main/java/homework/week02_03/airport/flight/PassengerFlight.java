@@ -40,7 +40,7 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
         return flightNumber;
     }
 
-    public long getPassengersNumberOnFlightToAGivenAirport(String airportCode) {
+    public long getPassengersNumberOnFlight(String airportCode) {
         return passengers.stream()
                 .filter(passenger -> passenger.getArrivalAirport().equals(airportCode))
                 .count();
@@ -52,13 +52,13 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
                 .collect(Collectors.toList());
     }
 
-    public List<Passenger> getPassengersWhoseLastNameStartsWithAGivenLetter(String firstLetterOfLastName) {
+    public List<Passenger> getPassengersWithAGivenLetter(String firstLetterOfLastName) {
         return passengers.stream()
                 .filter(passenger -> passenger.getLastName().startsWith(firstLetterOfLastName))
                 .collect(Collectors.toList());
     }
 
-    public List<CrewMember> getCrewMembersWhoHaveAGivenRole(CrewRole role) {
+    public List<CrewMember> getCrewMembersWithAGivenRole(CrewRole role) {
         return crewMembers.stream()
                 .filter(crewMember -> crewMember.getCrewRole() == role)
                 .collect(Collectors.toList());
@@ -70,14 +70,14 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
                 .collect(Collectors.joining(", ", "(", ")"));
     }
 
-    public List<String> getFullNamesOfAllPersonsOnBoard(List<List<? extends Person>> persons) {
+    public List<String> getAllNamesOnBoard(List<List<? extends Person>> persons) {
         return persons.stream()
                 .flatMap(Collection::stream)
                 .map(person -> person.getFirstName() + " " + person.getLastName())
                 .collect(Collectors.toList());
     }
 
-    public List<String> getFirstNamesWithHiddenLastNames(List<? extends Person> persons) {
+    public List<String> getNamesWithHiddenLastNames(List<? extends Person> persons) {
         return persons.stream()
                 .map(person -> person.getFirstName() + " " + person.getLastName().substring(0, 1) + ".")
                 .collect(Collectors.toList());

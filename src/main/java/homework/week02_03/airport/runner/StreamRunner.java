@@ -44,7 +44,7 @@ public class StreamRunner {
         System.out.println(" - - - Stream examples - - -");
 
         System.out.println("Example 1");
-        System.out.println("Number of passengers on flight to 'NYC': " + passengerFlight.getPassengersNumberOnFlightToAGivenAirport("NYC"));
+        System.out.println("Number of passengers on flight to 'NYC': " + passengerFlight.getPassengersNumberOnFlight("NYC"));
         System.out.println();
 
         System.out.println("Example 2");
@@ -54,12 +54,12 @@ public class StreamRunner {
 
         System.out.println("Example 3");
         System.out.println("Passengers whose last name starts with a given letter (D):");
-        passengerFlight.getPassengersWhoseLastNameStartsWithAGivenLetter("D").forEach(System.out::println);
+        passengerFlight.getPassengersWithAGivenLetter("D").forEach(System.out::println);
         System.out.println();
 
         System.out.println("Example 4");
         System.out.println("Crew members who have a given role (PILOT):");
-        passengerFlight.getCrewMembersWhoHaveAGivenRole(CrewRole.PILOT).forEach(System.out::println);
+        passengerFlight.getCrewMembersWithAGivenRole(CrewRole.PILOT).forEach(System.out::println);
         System.out.println();
 
         System.out.println("Example 5");
@@ -69,12 +69,12 @@ public class StreamRunner {
 
         System.out.println("Example 6");
         System.out.println("Full names of all persons on board:");
-        passengerFlight.getFullNamesOfAllPersonsOnBoard(List.of(crewMembers, passengers)).forEach(System.out::println);
+        passengerFlight.getAllNamesOnBoard(List.of(crewMembers, passengers)).forEach(System.out::println);
         System.out.println();
 
         System.out.println("Example 7");
         System.out.println("First names with hidden last names for a given person list (crew members):");
-        passengerFlight.getFirstNamesWithHiddenLastNames(crewMembers).forEach(System.out::println);
+        passengerFlight.getNamesWithHiddenLastNames(crewMembers).forEach(System.out::println);
         System.out.println();
     }
 }

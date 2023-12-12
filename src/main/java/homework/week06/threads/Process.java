@@ -27,7 +27,6 @@ public class Process implements Runnable {
             System.out.println("Process[" + getId() + "] released Connection]" + dbConnection.getId() +"]");
             connectionPool.put(dbConnection);
         } catch (InterruptedException e) {
-            //throw new RuntimeException(e);
             System.out.println("Error: " + e.getMessage());
         }
     }

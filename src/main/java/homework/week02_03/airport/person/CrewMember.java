@@ -1,13 +1,23 @@
 package homework.week02_03.airport.person;
 
+import homework.week02_03.airport.enums.CrewRole;
+
 public class CrewMember extends Person implements SafetyProcedure {
     private CrewRole crewRole;
-    private String licenceId;
+    private String licenseId;
 
-    public CrewMember(String firstName, String lastName, CrewRole crewRole, String licenceId) {
+    public CrewMember(String firstName, String lastName, CrewRole crewRole, String licenseId) {
         super(firstName, lastName);
         this.crewRole = crewRole;
-        this.licenceId = licenceId;
+        this.licenseId = licenseId;
+    }
+
+    public CrewRole getCrewRole() {
+        return crewRole;
+    }
+
+    public String getLicenseId() {
+        return licenseId;
     }
 
     @Override
@@ -18,19 +28,19 @@ public class CrewMember extends Person implements SafetyProcedure {
         CrewMember that = (CrewMember) o;
 
         if (crewRole != that.crewRole) return false;
-        return licenceId.equals(that.licenceId);
+        return licenseId.equals(that.licenseId);
     }
 
     @Override
     public int hashCode() {
         int result = crewRole.hashCode();
-        result = 31 * result + licenceId.hashCode();
+        result = 31 * result + licenseId.hashCode();
         return result;
     }
 
     @Override
     public String toString() {
-        return "name: " + getFirstName() + " " + getLastName() + ", role: " + crewRole + ", licence: " + licenceId;
+        return "name: " + getFirstName() + " " + getLastName() + ", role: " + crewRole + ", licence: " + licenseId;
     }
 
 

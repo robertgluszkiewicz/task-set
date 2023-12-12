@@ -4,9 +4,8 @@ import static org.testng.Assert.expectThrows;
 import org.testng.annotations.Test;
 
 import homework.week02_03.airport.aircraft.Airbus;
-import homework.week02_03.airport.aircraft.AircraftType;
+import homework.week02_03.airport.enums.AircraftType;
 import homework.week02_03.airport.aircraft.Position;
-import homework.week02_03.airport.exceptions.PositionNotFoundException;
 
 public class TestAirbus {
     @Test

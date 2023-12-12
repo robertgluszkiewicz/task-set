@@ -2,7 +2,9 @@ package homework.week02_03.airport.flight;
 
 import java.util.List;
 
-import homework.week02_03.airport.aircraft.AircraftType;
+import homework.week02_03.airport.enums.AircraftType;
+import homework.week02_03.airport.enums.FlightMode;
+import homework.week02_03.airport.enums.FlightType;
 import homework.week02_03.airport.person.CrewMember;
 import homework.week02_03.airport.person.Passenger;
 
@@ -13,11 +15,12 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
 
     public PassengerFlight(long id,
                            FlightType flightType,
+                           FlightMode flightMode,
                            AircraftType aircraftType,
                            List<Passenger> passengers,
                            List<CrewMember> crewMembers,
                            String flightNumber) {
-        super(id, flightType, aircraftType);
+        super(id, flightType, flightMode,aircraftType);
         this.passengers = passengers;
         this.crewMembers = crewMembers;
         this.flightNumber = flightNumber;
@@ -60,6 +63,7 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
         return "ID: " + getId() + '\n' +
                 "number: " + flightNumber + '\n' +
                 "type: " + getFlightType() + '\n' +
+                "mode: " + getFlightMode() + '\n' +
                 "aircraft type: " + getAircraftType() + '\n' +
                 "crew: " + crewMembers + '\n' +
                 "passengers: " + passengers + '\n';

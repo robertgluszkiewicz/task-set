@@ -1,5 +1,7 @@
 package homework.week02_03.airport.aircraft;
 
+import homework.week02_03.airport.enums.AircraftType;
+
 public abstract class Aircraft {
     protected String manufacture;
     protected AircraftType aircraftType;

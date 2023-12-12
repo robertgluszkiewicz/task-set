@@ -3,7 +3,7 @@ package homework.week06.threads;
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
-public class Process implements Runnable {
+public class Process implements Runnable{
     private int id;
 
     public Process(int id) {

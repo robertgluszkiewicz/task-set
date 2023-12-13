@@ -22,6 +22,14 @@ public class Passenger extends Person {
         return arrivalAirport.equals(passenger.arrivalAirport);
     }
 
+    public String getDepartureAirport() {
+        return departureAirport;
+    }
+
+    public String getArrivalAirport() {
+        return arrivalAirport;
+    }
+
     @Override
     public int hashCode() {
         int result = super.hashCode();

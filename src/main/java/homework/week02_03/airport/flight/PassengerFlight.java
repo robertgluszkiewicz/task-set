@@ -1,12 +1,17 @@
 package homework.week02_03.airport.flight;
 
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import homework.week02_03.airport.enums.AircraftType;
 import homework.week02_03.airport.enums.FlightMode;
 import homework.week02_03.airport.enums.FlightType;
 import homework.week02_03.airport.person.CrewMember;
+import homework.week02_03.airport.person.CrewRole;
 import homework.week02_03.airport.person.Passenger;
+import homework.week02_03.airport.person.Person;
 
 public class PassengerFlight extends Flight implements PassengerBoardServices {
     private List<Passenger> passengers;
@@ -36,6 +41,49 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
 
     public String getFlightNumber() {
         return flightNumber;
+    }
+
+    public long getPassengersNumberOnFlight(String airportCode) {
+        return passengers.stream()
+                .filter(passenger -> passenger.getArrivalAirport().equals(airportCode))
+                .count();
+    }
+
+    public List<Passenger> getPassengersSortedByLastName() {
+        return passengers.stream()
+                .sorted(Comparator.comparing(Person::getLastName))
+                .collect(Collectors.toList());
+    }
+
+    public List<Passenger> getPassengersWithAGivenLetter(String firstLetterOfLastName) {
+        return passengers.stream()
+                .filter(passenger -> passenger.getLastName().startsWith(firstLetterOfLastName))
+                .collect(Collectors.toList());
+    }
+
+    public List<CrewMember> getCrewMembersWithAGivenRole(CrewRole role) {
+        return crewMembers.stream()
+                .filter(crewMember -> crewMember.getCrewRole() == role)
+                .collect(Collectors.toList());
+    }
+
+    public String getCrewMembersLicenseIds() {
+        return crewMembers.stream()
+                .map(CrewMember::getLicenceId)
+                .collect(Collectors.joining(", ", "(", ")"));
+    }
+
+    public List<String> getAllNamesOnBoard(List<List<? extends Person>> persons) {
+        return persons.stream()
+                .flatMap(Collection::stream)
+                .map(person -> person.getFirstName() + " " + person.getLastName())
+                .collect(Collectors.toList());
+    }
+
+    public List<String> getNamesWithHiddenLastNames(List<? extends Person> persons) {
+        return persons.stream()
+                .map(person -> person.getFirstName() + " " + person.getLastName().substring(0, 1) + ".")
+                .collect(Collectors.toList());
     }
 
     @Override

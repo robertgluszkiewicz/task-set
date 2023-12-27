@@ -15,7 +15,7 @@ VALUES
 (8, 'St Ives'),
 (9, 'Milan'), 
 (9, 'Rome'), 
-(10, 'Madrit'), 
+(10, 'Madrid'),
 (10, 'Barcelona'), 
 (11, 'Malmo'), 
 (12, 'Vienna');

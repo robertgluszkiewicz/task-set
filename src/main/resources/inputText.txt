@@ -1,2 +1,0 @@
-Read the text from the file and calculate the numbers of the unique words.
-Write the result to the file.

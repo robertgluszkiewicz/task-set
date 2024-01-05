@@ -22,9 +22,9 @@ public class XmlValidator {
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new File(xmlFilePath)));
 
-            System.out.println("The XML file is valid according to the XSD schema.");
+            System.out.println("The XML file is valid according to the XSD schema");
         } catch (SAXException | IOException e) {
-            System.out.println("Error validating the XML file: " + e.getMessage());
+            System.out.println("XML file validation error: " + e.getMessage());
         }
     }
 }

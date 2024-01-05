@@ -41,7 +41,7 @@ public class XmlParserByDom {
                 System.out.println("------------------------------------");
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }

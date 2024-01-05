@@ -23,7 +23,7 @@ public class JSONParserByJackson {
                 System.out.println("------------------------");
             }
         } catch (IOException e) {
-            System.out.println("Error reading JSON file tree: " + e.getMessage());
+            System.out.println("JSON file tree reading error: " + e.getMessage());
         }
     }
 }

@@ -12,24 +12,16 @@ import xml_parsers_json_jackson.model.Employee;
 public class XmlParserByJAXB {
     public static void main(String[] args) {
         try {
-            File xmlFile = new File("src/main/resources/bank.xml");
-
-            JAXBContext jaxbContext = null;
-            try {
-                jaxbContext = JAXBContext.newInstance(Bank.class);
-            } catch (JAXBException e) {
-                throw new RuntimeException(e);
-            }
+            File xml = new File("src/main/resources/bank.xml");
+            JAXBContext jaxbContext = JAXBContext.newInstance(Bank.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
-            Bank bank = (Bank) jaxbUnmarshaller.unmarshal(xmlFile);
-
+            Bank bank = (Bank) jaxbUnmarshaller.unmarshal(xml);
 
             System.out.println("Employees:");
             for (Employee employee : bank.getEmployees()) {
                 System.out.println("Employee ID: " + employee.getEmployeeId());
                 System.out.println("Name: " + employee.getFirstName() + " " + employee.getLastName());
-                System.out.println("Birth Date: " + employee.getBirthDate());
+                System.out.println("Birth date: " + employee.getBirthDate());
                 System.out.println("------------------------");
             }
         } catch (JAXBException e) {

@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import homework.week02_03.airport.enums.AircraftType;
+import homework.week02_03.airport.enums.CrewRole;
 import homework.week02_03.airport.enums.FlightMode;
 import homework.week02_03.airport.enums.FlightType;
 import homework.week02_03.airport.person.CrewMember;
-import homework.week02_03.airport.person.CrewRole;
 import homework.week02_03.airport.person.Passenger;
 import homework.week02_03.airport.person.Person;
 
@@ -69,7 +69,7 @@ public class PassengerFlight extends Flight implements PassengerBoardServices {
 
     public String getCrewMembersLicenseIds() {
         return crewMembers.stream()
-                .map(CrewMember::getLicenceId)
+                .map(CrewMember::getLicenseId)
                 .collect(Collectors.joining(", ", "(", ")"));
     }
 

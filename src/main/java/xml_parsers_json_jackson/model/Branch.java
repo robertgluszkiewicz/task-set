@@ -13,4 +13,19 @@ public class Branch {
 
     @XmlElement(name = "employees_number")
     private int employeesNumber;
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getEmployeesNumber() {
+        return employeesNumber;
+    }
+
+    public Branch() {
+    }
 }

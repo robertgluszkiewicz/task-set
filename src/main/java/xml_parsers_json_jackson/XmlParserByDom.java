@@ -30,13 +30,10 @@ public class XmlParserByDom {
             for (int i = 0; i < employees.getLength(); i++) {
                 Node node = employees.item(i);
                 Element element = (Element) node;
-
                 String employeeId = element.getElementsByTagName("employee_id").item(0).getTextContent();
                 String first_name = element.getElementsByTagName("first_name").item(0).getTextContent();
                 String last_name = element.getElementsByTagName("last_name").item(0).getTextContent();
                 Date birth_date = formatter.parse(element.getElementsByTagName("birth_date").item(0).getTextContent());
-
-
                 System.out.println("Employee ID: " + employeeId);
                 System.out.println("First name: " + first_name);
                 System.out.println("Last name: " + last_name);

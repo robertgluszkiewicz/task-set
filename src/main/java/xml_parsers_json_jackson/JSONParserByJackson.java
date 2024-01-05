@@ -10,11 +10,11 @@ public class JSONParserByJackson {
     public static void main(String[] args) {
         try {
             File json = new File("src/main/resources/bank.json");
-
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode rootNode = objectMapper.readTree(json);
             JsonNode accountsNode = rootNode.get("bank").get("accounts").get("account");
             Iterator<JsonNode> iterator = accountsNode.elements();
+
             while (iterator.hasNext()) {
                 JsonNode account = iterator.next();
                 System.out.println("Account ID: " + account.get("account_id").asInt());

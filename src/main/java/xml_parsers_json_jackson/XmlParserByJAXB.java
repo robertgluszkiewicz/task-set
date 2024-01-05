@@ -16,10 +16,11 @@ public class XmlParserByJAXB {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             Bank bank = (Bank) jaxbUnmarshaller.unmarshal(xml);
 
-            System.out.println("Employees:");
+            System.out.println("Employees:" + '\n');
             for (Employee employee : bank.getEmployees()) {
                 System.out.println("Employee ID: " + employee.getEmployeeId());
-                System.out.println("Name: " + employee.getFirstName() + " " + employee.getLastName());
+                System.out.println("First name: " + employee.getFirstName());
+                System.out.println("Last name: " + employee.getLastName());
                 System.out.println("Birth date: " + employee.getBirthDate());
                 System.out.println("------------------------");
             }

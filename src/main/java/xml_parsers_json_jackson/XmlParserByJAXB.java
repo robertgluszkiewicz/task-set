@@ -2,10 +2,9 @@ package xml_parsers_json_jackson;
 
 import java.io.File;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import xml_parsers_json_jackson.model.Bank;
 import xml_parsers_json_jackson.model.Employee;
 

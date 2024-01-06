@@ -2,6 +2,8 @@ package xml_parsers_json_jackson.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -11,6 +13,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "bank")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Bank {
+    @JsonProperty("employees")
     @XmlElementWrapper(name = "employees")
     @XmlElement(name = "employee")
     private List<Employee> employees;

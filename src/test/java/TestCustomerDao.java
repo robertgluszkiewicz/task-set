@@ -14,7 +14,7 @@ public class TestCustomerDao {
     void testDbCRUDOperations() throws SQLException {
         CustomerDao customerDao = new CustomerDao();
         Customer testCustomer = new Customer(
-                9,
+                3,
                 "TestFirstName",
                 "TestLastName",
                 "TestPhone",
@@ -25,7 +25,7 @@ public class TestCustomerDao {
         assertTrue(customerDao.insert(testCustomer));
 
         //SELECT test
-        int customerId = 13;
+        int customerId = 14;
         assertNotNull(customerDao.getEntityById(customerId));
 
         //UPDATE test

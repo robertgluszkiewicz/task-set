@@ -6,13 +6,13 @@ import java.sql.SQLException;
 
 import org.testng.annotations.Test;
 
-import homework.bank.dao.CustomerDao;
+import homework.bank.dao.CustomerDaoJdbcImpl;
 import homework.bank.model.Customer;
 
-public class TestCustomerDao {
+public class TestCustomerDaoJdbcImpl {
     @Test
-    void testDbCRUDOperations() throws SQLException {
-        CustomerDao customerDao = new CustomerDao();
+    void testJdbcCrudOperations() throws SQLException {
+        CustomerDaoJdbcImpl customerDaoJdbcImpl = new CustomerDaoJdbcImpl();
         Customer testCustomer = new Customer(
                 3,
                 "TestFirstName",
@@ -22,18 +22,18 @@ public class TestCustomerDao {
 
 
         //INSERT test
-        assertTrue(customerDao.insert(testCustomer));
+        assertTrue(customerDaoJdbcImpl.insert(testCustomer));
 
         //SELECT test
-        int customerId = 14;
-        assertNotNull(customerDao.getEntityById(customerId));
+        int customerId = 51;
+        assertNotNull(customerDaoJdbcImpl.getEntityById(customerId));
 
         //UPDATE test
         testCustomer.setFirstName("UpdatedTestFirstName");
-        customerDao.update(testCustomer, customerId);
+        customerDaoJdbcImpl.update(testCustomer, customerId);
 
         //DELETE test
-        assertTrue(customerDao.delete(customerId));
-        assertNull(customerDao.getEntityById(customerId));
+        assertTrue(customerDaoJdbcImpl.delete(customerId));
+        assertNull(customerDaoJdbcImpl.getEntityById(customerId));
     }
 }

@@ -11,7 +11,7 @@ import homework.bank.connection.CustomConnection;
 import homework.bank.exception.DbCRUDException;
 import homework.bank.model.Customer;
 
-public class MyBatisCustomerDao implements Dao<Customer, Integer> {
+public class CustomerDaoJdbcImpl implements Dao <Customer, Integer> {
     private static final String SELECT_ALL_CUSTOMERS = "SELECT * FROM bank.customer";
     private static final String SELECT_CUSTOMER_BY_ID = "SELECT * FROM bank.customer WHERE customer_id = ?";
     private static final String INSERT_CUSTOMER = "INSERT INTO bank.customer (address_id, first_name, last_name, phone, email) VALUES (?, ?, ?, ?, ?)";
@@ -36,7 +36,7 @@ public class MyBatisCustomerDao implements Dao<Customer, Integer> {
     public Customer getEntityById(Integer id) {
         try (Connection connection = CustomConnection.getConnection();
              PreparedStatement ps = connection.prepareStatement(SELECT_CUSTOMER_BY_ID)) {
-            ps.setInt(1, id);
+             ps.setInt(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 return rs.next() ? mapResultSetToCustomer(rs) : null;
             }
@@ -48,7 +48,7 @@ public class MyBatisCustomerDao implements Dao<Customer, Integer> {
     @Override
     public boolean insert(Customer customer) {
         try (Connection connection = CustomConnection.getConnection();
-             PreparedStatement ps = connection.prepareStatement(INSERT_CUSTOMER)) {
+            PreparedStatement ps = connection.prepareStatement(INSERT_CUSTOMER)) {
             setCustomerParameters(ps, customer);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -71,7 +71,7 @@ public class MyBatisCustomerDao implements Dao<Customer, Integer> {
     @Override
     public boolean delete(Integer id) {
         try (Connection connection = CustomConnection.getConnection();
-             PreparedStatement ps = connection.prepareStatement(DELETE_CUSTOMER)) {
+            PreparedStatement ps = connection.prepareStatement(DELETE_CUSTOMER)) {
             ps.setInt(1, id);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {

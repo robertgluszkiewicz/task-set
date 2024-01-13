@@ -24,7 +24,7 @@ public class TestCustomerDaoMyBatisImpl {
         assertTrue(cdmb.insert(testCustomer));
 
         //SELECT test
-        int customerId = 53;
+        int customerId = 54;
         assertNotNull(cdmb.getEntityById(customerId));
 
         //UPDATE test

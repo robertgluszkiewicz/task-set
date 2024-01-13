@@ -39,7 +39,6 @@ public class CustomerDaoMyBatisImpl implements Dao<Customer, Integer> {
             params.put("customer", customer);
             params.put("id", id);
             session.update("homework.bank.dao.Dao.update", params);
-            session.commit();
         }
     }
 
